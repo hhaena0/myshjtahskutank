@@ -491,12 +491,15 @@ body::before {
 }
 
 .tag-org.active,
-.current-tags-row .tag-org {
+.current-tags-row .tag-org,
+.episode-tags .tag-org,
+.tag-filter-scroll .tag-org {
   background: #1f2937;
   color: #ffffff;
   border-color: #1f2937;
   filter: none;
 }
+
 
 
 .tag-kid {
@@ -850,7 +853,7 @@ body::before {
   padding: 14px;
   background: var(--accent);
   color: #fff;
-  border: none;
+  border: 1px solid transparent;
   border-radius: var(--radius-md);
   font-family: inherit;
   font-size: 0.95rem;
@@ -867,7 +870,7 @@ body::before {
 .btn-primary.watched-active {
   background: rgba(49, 130, 206, 0.15);
   color: var(--accent);
-  border: 1px solid var(--border-accent);
+  border-color: var(--border-accent);
 }
 
 .btn-secondary {
