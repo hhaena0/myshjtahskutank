@@ -256,6 +256,8 @@ body::before {
 /* ===== 시즌 선택기 ===== */
 .season-selector-wrapper {
   padding: 10px 0 0;
+  border-top: 1px solid var(--border);
+  margin-top: 12px;
 }
 
 .season-selector {
