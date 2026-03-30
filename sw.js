@@ -1,4 +1,4 @@
-const CACHE_NAME = 'conan-tracker-v9';
+const CACHE_NAME = 'myshjtahskutank-v1';
 const ASSETS = [
   '/myshjtahskutank/',
   '/myshjtahskutank/index.html',
@@ -11,6 +11,7 @@ const ASSETS = [
   '/myshjtahskutank/icon-192.png',
   '/myshjtahskutank/icon-512.png'
 ];
+
 
 self.addEventListener('install', (e) => {
   e.waitUntil(
