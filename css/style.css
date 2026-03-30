@@ -412,7 +412,7 @@ body::before {
   gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
-  padding-bottom: 2px;
+  padding: 2px 2px 4px;
 }
 
 .filter-tabs::-webkit-scrollbar {
@@ -456,6 +456,7 @@ body::before {
   gap: 6px;
   overflow-x: auto;
   scrollbar-width: none;
+  padding: 2px;
 }
 
 .tag-filter-scroll::-webkit-scrollbar {
@@ -682,6 +683,7 @@ body::before {
   flex-wrap: wrap;
   gap: 4px;
   margin-top: 5px;
+  padding: 1px;
 }
 
 /* 우측 액션 영역 */
