@@ -162,7 +162,7 @@ body::before {
 
 /* ===== 헤더 ===== */
 .app-header {
-  padding: 18px 20px 14px;
+  padding: calc(18px + env(safe-area-inset-top, 0px)) 20px 14px;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -259,7 +259,7 @@ body::before {
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
   position: sticky;
-  top: 115px;
+  top: calc(115px + env(safe-area-inset-top, 0px));
   z-index: 90;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -479,16 +479,9 @@ body::before {
 }
 
 .tag-org {
-  background: #666;
-  color: #fff;
-  border-color: #666;
-}
-
-.modal-body .tag-org,
-.quick-tags-row .tag-org {
-  background: #ffffff !important;
-  color: #666666 !important;
-  border-color: #cccccc !important;
+  background: #f1f5f9;
+  color: #64748b;
+  border-color: #e2e8f0;
 }
 
 .tag-kid {
@@ -538,7 +531,7 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 8px 14px 100px;
+  padding: 8px 14px calc(100px + env(safe-area-inset-bottom, 0px));
 }
 
 /* 에피소드 카드 */
@@ -1079,5 +1072,15 @@ body::before {
   body {
     border-left: 1px solid var(--border);
     border-right: 1px solid var(--border);
+  }
+}
+
+/* ===== 모바일 입력창 자동 확대 방지 ===== */
+/* iOS Safari는 font-size < 16px인 input/textarea 터치 시 자동 확대됨 */
+@media screen and (max-width: 768px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
   }
 }
