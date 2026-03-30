@@ -1,15 +1,15 @@
 const CACHE_NAME = 'conan-tracker-v8';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/css/style.css',
-  '/js/app.js',
-  '/js/api.js',
-  '/js/storage.js',
-  '/js/ui.js',
-  '/manifest.json',
-  '/icon-192.png',
-  '/icon-512.png'
+  '/conan-tracker/',
+  '/conan-tracker/index.html',
+  '/conan-tracker/css/style.css',
+  '/conan-tracker/js/app.js',
+  '/conan-tracker/js/api.js',
+  '/conan-tracker/js/storage.js',
+  '/conan-tracker/js/ui.js',
+  '/conan-tracker/manifest.json',
+  '/conan-tracker/icon-192.png',
+  '/conan-tracker/icon-512.png'
 ];
 
 self.addEventListener('install', (e) => {
