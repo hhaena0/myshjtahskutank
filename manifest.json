@@ -2,7 +2,7 @@
   "name": "명탐정 코난 정주행 트래커",
   "short_name": "코난 트래커",
   "description": "명탐정 코난 정주행 시청 트래커 - 에피소드 체크 & 태그 관리",
-  "start_url": "/conan-tracker/",
+  "start_url": "/myshjtahskutank/",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#f8fafc",
