@@ -258,8 +258,12 @@ body::before {
   background: rgba(255, 255, 255, 0.92);
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
-  position: sticky;
+  position: fixed;
   top: calc(140px + env(safe-area-inset-top, 0px));
+  left: 0;
+  right: 0;
+  max-width: 600px;
+  margin: 0 auto;
   z-index: 90;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -336,6 +340,7 @@ body::before {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px 0;
+  margin-top: 50px;
 }
 
 #current-season-info {
@@ -481,9 +486,18 @@ body::before {
 
 .tag-org {
   background: #f1f5f9;
-  color: #64748b;
-  border-color: #e2e8f0;
+  color: #1e293b;
+  border-color: #d1d5db;
 }
+
+.tag-org.active,
+.current-tags-row .tag-org {
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #1f2937;
+  filter: none;
+}
+
 
 .tag-kid {
   background: var(--tag-kid-bg);
