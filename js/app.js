@@ -142,6 +142,9 @@ function initSeasonSelector() {
   renderSeasonSelector(allSeasons, currentSeasonFilter, function(seasonNum) {
     currentSeasonFilter = seasonNum;
 
+    // 시즌 변경 시 스크롤 맨 위로
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
     // 시즌 선택 시 현재 시즌 안내 업데이트
     var seasonInfoEl = document.getElementById('current-season-info');
     if (seasonInfoEl) {
