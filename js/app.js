@@ -116,6 +116,27 @@ function refreshTagFilters() {
   });
 }
 
+// ── 시청 기록 초기 마이그레이션 (1회만 실행) ───
+function runWatchedMigration() {
+  var MIGRATION_KEY = 'conan_watched_migration_v1';
+  if (localStorage.getItem(MIGRATION_KEY)) return;
+
+  allEpisodes.forEach(function(ep) {
+    var sNum = ep.seasonNumber;
+    // 시즌 1, 2, 3 전체 시청 완료
+    if (sNum >= 1 && sNum <= 3) {
+      Storage.setEpisodeData(ep.id, { watched: true });
+    }
+    // 시즌 4의 1화~38화 시청 완료
+    else if (sNum === 4 && ep.episodeInSeason <= 38) {
+      Storage.setEpisodeData(ep.id, { watched: true });
+    }
+  });
+
+  localStorage.setItem(MIGRATION_KEY, '1');
+  console.log('[마이그레이션] 시즌1~3 전체 + 시즌4 38화까지 시청 완료 처리됨');
+}
+
 // ── 시즌 선택기 초기화 ─────────────────────────
 function initSeasonSelector() {
   renderSeasonSelector(allSeasons, currentSeasonFilter, function(seasonNum) {
@@ -189,6 +210,9 @@ async function init() {
           }
       }
   });
+
+  // 시청 기록 마이그레이션 (최초 1회)
+  runWatchedMigration();
 
   // 진행률 업데이트
   updateProgressUI(allEpisodes);
